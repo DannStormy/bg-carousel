@@ -5,10 +5,11 @@ $(document).ready(function(){
     $(this).addClass("active")
     let current = $(this).attr('src')
     $(".display").css("background-image", "url(" + current + ")")
-    // $(this).parent().prepend(this)
+    $('.image-div').prepend(this)
   });
 
   let index = 0;
+  //array of images
   let allImages = [];
 
   $(".forward").click(() => {
@@ -18,7 +19,7 @@ $(document).ready(function(){
   $(".back").click(() => {
     changeBackward()
   })
-
+//push each image to array
   let image = $('img');
   image.each(function(i,e){
     allImages.push($(e).attr('src'))
